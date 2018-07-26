@@ -16,7 +16,7 @@ function initMap() {
      * Locations request
      **********************************/
     var request = {
-        query: 'National parks in new zealand'
+        query: 'National park destinations new Zealand'
     };
     placesService = new google.maps.places.PlacesService(map);
     placesService.textSearch(request, callback);
@@ -27,7 +27,8 @@ function initMap() {
                 markers.push(createMarker(results[i]));
             }
         } else {
-            error();
+            error("callback");
+            console.log(results, status)
         }
         setModel(markers, results);
     }
@@ -147,7 +148,7 @@ function getLocationDetails(marker, callback){
         placeId: marker.id
     }, function(place, status) {
         if (status !== google.maps.places.PlacesServiceStatus.OK) {
-            error();
+            error("getLocationDetails");
         }
         getWeatherForLocation(place, status, callback);        
     });
@@ -156,7 +157,7 @@ function getLocationDetails(marker, callback){
 // Gets the current weather for specified location
 function getWeatherForLocation(location, status, callback) {
     if(!location){
-        error();
+        error("getWeatherForLocation");
         return;
     }
     var lng = location.geometry.location.lng();
@@ -165,7 +166,7 @@ function getWeatherForLocation(location, status, callback) {
     $.getJSON(url, function( weather ) {
         callback(location, status, weather);
     }).fail(function(){
-        error();
+        error("getJSON");
     });
 
 }
@@ -186,6 +187,7 @@ function hideListings() {
   /*************************************************
  * Error Handling
  ************************************************/
-function error(){
+function error(test){
     alert("We seem to have encountered a problem with one of our resources.  Please try again later.");
+    console.log(test)
 }
