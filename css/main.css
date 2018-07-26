@@ -1,0 +1,130 @@
+html, body{
+    height: 100%;
+    background: slategray !important;
+}
+#map {
+    height: 100%;
+}
+#map>div {
+    background: #0b0b0c !important;
+}
+.container {
+    height: calc(100% - 44px);
+    padding: 0;
+    float: left;
+}
+.map-container{
+    width: 75%;
+}
+.menu-container {
+    width: 25%;
+}
+.header {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    position: relative;
+    display: block;
+    height: 44px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 12px;
+}
+
+.header * {
+    border-radius: 0px !important;
+}
+
+.header .header-title {
+    font-size: 30px;
+    vertical-align: baseline;
+}
+
+.header .mobile-menu-button {
+    display: none;
+}
+.input-field {
+    width: 80%;
+    border: 0;
+    padding: 20px 10px;
+}
+
+.search-button {
+    padding: 10px 30px;
+    outline: 0;
+    border: 3px solid rgba(86, 146, 235, 0.404); 
+    width: 20%;
+    margin-left: -20px;
+    margin-top: 7px;
+}
+
+.input-field, .search-button {
+    background: rgb(209, 211, 221);
+    color: #a3a3a3;
+    box-sizing: border-box;
+    float: left;
+    display: block;
+    border-radius: 5px;
+}
+
+.search-block {
+    margin: 30px 20px;
+    height: 60px;
+}
+
+.results-block {
+    width: 90%;
+    margin: 0 auto;
+    height: calc(100% - 150px);
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+.results-container {
+    list-style: none;
+    font-size: 20px;
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.results-container li {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.attributions {
+    margin: 40px; 
+    color: white;
+    font-size: 10px;
+}
+
+.gm-style-iw>div>div{
+    overflow: hidden !important;
+}
+
+.dark, .dark * {
+    background: #0b0b0c !important;
+    color: LIGHTSLATEGREY !important;
+}
+
+@media screen and (max-width: 1024px){
+    .container {
+        width: 100%;
+        z-index: 2;
+    }
+    .hide {
+        display: none;
+    }
+    .header .mobile-menu-button {
+        display: block;
+        float: right;
+        font-size: 20px;
+    }
+    .header .header-title {
+        font-size: 15px;
+        vertical-align: baseline;
+    }
+    .park-name {
+        font-size: 15px;
+    }
+}
